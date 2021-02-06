@@ -1,5 +1,7 @@
 const lichess_url = "https://lichess.org";
 const lichess_games = "/api/games/user/";
+const timecontrol_key = "&perfType=";
+const ngames_key = "?max=";
 
 
 function disB() {
@@ -56,14 +58,14 @@ function download(data, filename, type) {
 //tentativo
 
 async function ScaPartite() {
-    var tipo = "&perfType=" + document.getElementById("timecontrol").value;
-    var ngames = "?max=" + document.getElementById("npartite").value;
+    var tipo = document.getElementById("timecontrol").value;
+    var ngames = document.getElementById("npartite").value;
     var username = document.getElementById("utente").value;
 
-    const risp = await fetch(lichess_url + lichess_games + username + ngames+ tipo + "&clocks=true");
+    const risp = await fetch(lichess_url + lichess_games + username + ngames_key+ ngames+ timecontrol_key+ tipo + "&clocks=true");
     const dati = await risp.text();
     console.log(dati);
-    // download(dati, "Partite_" + username + ".pgn");
+    download(dati, "Partite_" + username + "_"+ tipo+ ".pgn");
 
 };
 function controllo() {
