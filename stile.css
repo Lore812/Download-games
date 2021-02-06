@@ -1,16 +1,62 @@
+
 body {
 
-    /* background: linear-gradient(200deg, rgba(0, 51, 97, 0.81), rgba(116, 0, 135, 0.91)); */
-    border: 3px solid #ffffff;
+    background: #0D47A1;
 }
+header{
+    background:#d6e1e9 ;
+    height:150px;
+    width: 100%;
+    font-size:50px;
+    text-align: center;
+    color: #1A237E;
+    margin-bottom: 50px;
+    font-family: "ubuntu", serif;
 
+}
+label {
+    color: #ffffff;
+    margin: 1%;
+    font-size: 40px;
+    font-family: "ubuntu", serif;
+}
 #container {
     font-size: large;
     text-align: center;
     /* width: max-content; */
 }
-div#pulsante {
-    margin-top: 20px;
+#bottone {
+    font-family: "ubuntu", serif;
+    font-weight:700;
+    margin-top: 80px;
     text-align: center;
+    color: #FFEBEE;
+    background: #FF3D00;
+    width: 300px;
+    height: 90px;
+    border-radius:10px;
+    font-size: 45px;
+    -webkit-text-stroke: 2px black;
+    
 }
 /* ########################################################################### */
+.select {
+    font-family: "ubuntu", serif;
+    margin-top: 10px;
+    width: 180px;
+    border-width: 3px;
+    border-radius: 10px;
+    text-align-last: center;
+    font-size: 30px;
+    border-color: #a7bcc9;
+    background-color: #ffffff;
+}
+input {
+    font-family: "ubuntu", serif;
+    margin: 2%;
+    height: 40px;
+    width: 200px;
+    text-align-last: center;
+    font-size: 25px;
+    background-color: white;
+}

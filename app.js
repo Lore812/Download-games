@@ -6,11 +6,12 @@ const ngames_key = "?max=";
 
 function disB() {
 
-    document.getElementById("bottone").disabled=true;
+    document.getElementById("bottone").disabled = true;
 }
+
 function actB() {
 
-    document.getElementById("bottone").disabled=false;
+    document.getElementById("bottone").disabled = false;
 }
 
 
@@ -62,13 +63,34 @@ async function ScaPartite() {
     var ngames = document.getElementById("npartite").value;
     var username = document.getElementById("utente").value;
 
-    const risp = await fetch(lichess_url + lichess_games + username + ngames_key+ ngames+ timecontrol_key+ tipo + "&clocks=true");
+    const risp = await fetch(lichess_url + lichess_games + username + ngames_key + ngames + timecontrol_key + tipo + "&clocks=true");
     const dati = await risp.text();
-    console.log(dati);
-    download(dati, "Partite_" + username + "_"+ tipo+ ".pgn");
+    // console.log(dati);
+    download(dati, "Partite_" + username + "_" + tipo + ".pgn");
 
 };
-function controllo() {
-    var tempo = "&perfType=" +document.getElementById("timecontrol").value;
-    console.log(tempo);
-};
+// function controllo() {
+//     var tempo = "&perfType=" +document.getElementById("timecontrol").value;
+//     console.log(tempo);
+// };
+
+//funzione controllo del username
+//https://lichess.org/api/user/{username}
+async function controllonome() {
+    var nome = document.getElementById('utente').value;
+    var casella = document.getElementById("utente");
+    const risp = await fetch("https://lichess.org/api/user/" + nome);
+
+    if (nome == "") {
+        casella.style.backgroundColor = "white";
+    } else {
+        if (!risp.ok) {
+            casella.style.backgroundColor = "#FF5252";
+            document.getElementById("bottone").disabled = true;
+        } else {
+            document.getElementById("bottone").disabled = false;
+            casella.style.backgroundColor = "#69F0AE";
+        }
+    }
+
+}
