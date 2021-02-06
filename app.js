@@ -53,6 +53,7 @@ function download(data, filename, type) {
 //https://lichess.org/api/games/user/sean4you?max=2 
 
 //funzione che scarica le partite dalla API
+//tentativo
 
 async function ScaPartite() {
     var tipo = "&perfType=" + document.getElementById("timecontrol").value;
