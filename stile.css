@@ -1,0 +1,16 @@
+body {
+
+    /* background: linear-gradient(200deg, rgba(0, 51, 97, 0.81), rgba(116, 0, 135, 0.91)); */
+    border: 3px solid #ffffff;
+}
+
+#container {
+    font-size: large;
+    text-align: center;
+    /* width: max-content; */
+}
+div#pulsante {
+    margin-top: 20px;
+    text-align: center;
+}
+/* ########################################################################### */

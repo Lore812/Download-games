@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="stile.css">
+
+    <title>Home page</title>
+
+</head>
+
+<body>
+    
+    <div id="container-fluid" class="jumbotron vertical-center text-center">
+        <div class="page-header">
+
+            <h1>Scarica le ultime partite di un utente Lichess!</h1>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <label>Nome utente:</label> <br>
+        <input id="utente" autocomplete="off" placeholder="Esempio: zolpi"></input><br><br>
+
+        <label for="timecontrol">Cadenza di gioco:</label><br>
+
+        <select name="timecontrol" id="timecontrol" class="select" >
+            <option value="bullet">Bullet</option>
+            <option value="blitz">Blitz</option>
+            <option value="rapid">Rapid</option>
+            <option value="classical">Classical</option>
+        </select>
+        <br /><br>
+
+        <label>Numero partite da scaricare:</label> <br><input id="npartite" autocomplete="off"
+            placeholder="Esempio: 2"></input><br>
+
+        </div>
+        <div id="pulsante">
+
+            <button id="bottone" onclick="ScaPartite()" type="button" class="btn btn-primary sbtn-lg">Scarica</button>
+            <!-- <button onclick="controllo()"> controllo</button> -->
+        </div>
+
+
+       
+
+    <script type="text/javascript">
+        document.getElementById("bottone").disabled = true;
+
+        const input = document.querySelector('input');
+        var cose = "";
+        input.addEventListener('input', updateValue);
+
+        function updateValue(e) {
+            document.getElementById("bottone").disabled = false;
+            cose = e.target.value;
+            console.log(cose);
+            if(cose == "") {
+                document.getElementById("bottone").disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
