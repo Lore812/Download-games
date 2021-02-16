@@ -77,12 +77,14 @@ async function ScaPartite() {
 //funzione controllo del username
 //https://lichess.org/api/user/{username}
 async function controllonome() {
+
     var nome = document.getElementById('utente').value;
     var casella = document.getElementById("utente");
     const risp = await fetch("https://lichess.org/api/user/" + nome);
 
     if (nome == "") {
         casella.style.backgroundColor = "white";
+        disB();
     } else {
         if (!risp.ok) {
             casella.style.backgroundColor = "#FF5252";

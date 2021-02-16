@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
     <script src="app.js"></script>
     <link rel="stylesheet" href="stile.css">
 
@@ -15,41 +15,43 @@
 </head>
 
 <body>
+    <divid id="testa">
 
-    <header>Scarica le ultime partite di un utente Lichess!</header>
+        <header>Scarica le ultime partite di un utente Lichess!</header>
+        </div>
 
-    <div id="container">
+        <div id="container">
 
-        <label>Nome utente:</label> <br>
-        <input id="utente" autocomplete="off" placeholder="Esempio: zolpi" onkeyup="controllonome()"></input><br><br>
+            <label>Nome utente:</label> <br>
+            <input id="utente" autocomplete="off" placeholder="Esempio: zolpi" onkeyup="setTimeout( controllonome(),2000);"></input><br><br>
 
-        <label for="timecontrol">Cadenza di gioco:</label><br>
+            <label for="timecontrol">Cadenza di gioco:</label><br>
 
-        <select name="timecontrol" id="timecontrol" class="select">
-            <option value="bullet">Bullet</option>
-            <option value="blitz">Blitz</option>
-            <option value="rapid">Rapid</option>
-            <option value="classical">Classical</option>
-        </select>
+            <select name="timecontrol" id="timecontrol" class="select">
+                <option value="bullet">Bullet</option>
+                <option value="blitz">Blitz</option>
+                <option value="rapid">Rapid</option>
+                <option value="classical">Classical</option>
+            </select>
 
-        <br /><br>
+            <br /><br>
 
-        <label>Numero partite da scaricare:</label> <br><input id="npartite" autocomplete="off"
-            placeholder="Esempio: 2"></input><br>
+            <label>Numero partite da scaricare:</label> <br><input id="npartite" autocomplete="off"
+                placeholder="Esempio: 2"></input><br>
 
-    </div>
-    <div id="pulsante" style="text-align: center;">
+        </div>
+        <div id="pulsante" style="text-align: center;">
 
-        <button id="bottone" onclick="ScaPartite()" type="button" class="btn btn-primary sbtn-lg">Scarica</button>
-        <!-- <button onclick="controllo()"> controllo</button> -->
-    </div>
-
-
+            <button id="bottone" onclick="ScaPartite()" type="button" class="btn btn-primary sbtn-lg">Scarica</button>
+            <!-- <button onclick="controllo()"> controllo</button> -->
+        </div>
 
 
-    <script type="text/javascript">
-        document.getElementById("bottone").disabled = true;
-    </script>
+
+
+        <script type="text/javascript">
+            document.getElementById("bottone").disabled = true;
+        </script>
 </body>
 
 </html>
